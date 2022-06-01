@@ -1,9 +1,9 @@
 function init() {
-    console.log("Hello world!");
+	console.log("Hello world!");
 }
 
 if (document.readyState === "complete" || document.readyState === "interactive") {
-    init();
+	init();
 } else {
-    window.addEventListener("DOMContentLoaded", init);
+	window.addEventListener("DOMContentLoaded", init);
 }

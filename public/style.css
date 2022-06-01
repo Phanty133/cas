@@ -1,0 +1,73 @@
+body {
+	margin: 0;
+}
+
+#bgimg {
+	position: absolute;
+	z-index: -1;
+	width: 100vw;
+	height: 100vh;
+	background-image: url("./img/greenwall.webp");
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 0.85;
+	filter: brightness(25%);
+}
+
+.frontpage {
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+	grid-template-columns: 3fr 2fr;
+}
+
+.frontleft, .frontright {
+	padding: 5vw;
+}
+
+.frontleft {
+	color: white;
+	background: rgb(0,200,35);
+	background: linear-gradient(90deg, rgba(0,125,35,0.3) 0%, rgba(0,125,35,0.3) 65%, rgba(0,125,35,0) 100%);
+	font-family: "Open Sans";
+	display: flex;
+	align-items: center;
+	padding-left: 7.5vw;
+}
+
+.frontleft div {
+	display: inline-block;
+	max-width: 60%;
+	font-size: 1.75rem;
+}
+
+.title {
+	font-family: "Open Sans Light";
+	font-size: 6vw;
+	color: white;
+	text-shadow: 5px 5px 10px rgba(0,0,0,0.25);
+	/* font-weight: bold; */
+}
+
+#playBtn {
+	display: inline-block;
+	font-size: 3vw;
+	border: none;
+	transition: filter 0.3s;
+	cursor: pointer;
+	color: white;
+	margin-top: 2em;
+	text-align: center;
+	width: 100%;
+	font-weight: bold;
+}
+
+#playBtn:hover {
+	filter: brightness(65%);
+}
+
+.frontright {
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
