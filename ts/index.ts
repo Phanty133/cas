@@ -23,11 +23,12 @@ function init() {
 	fetch("headlines.json").then(resp => resp.json()).then(resp => {
 		headlines = resp; // load headlines
 		document.getElementById("totalQuestions")!.innerText = headlines.length.toString();
+		document.getElementById("totalQuestions2")!.innerText = headlines.length.toString();
 	});
 
-	addQuestionDropdown("q1", false, true, "hello1");
-	addQuestionDropdown("q2", true, true, "hello2");
-	addQuestionDropdown("q3", true, false, "hello3");
+	// addQuestionDropdown("q1", false, true, "hello1");
+	// addQuestionDropdown("q2", true, true, "hello2");
+	// addQuestionDropdown("q3", true, false, "hello3");
 }
 
 function start() {
@@ -41,7 +42,17 @@ function start() {
 
 function getNext() {
 	if (currIndex >= headlines.length) {
-		// go to end
+		// getMistakes();
+		document.getElementById("correctQuestionNr")!.innerText = (headlines.length - incorrect.length).toString();
+		document.getElementById("game")!.style.display = "none";
+		document.getElementById("end")!.style.display = "flex";
+		fetch("http://35.172.201.164:6969/endpoint", {
+			method: "POST",
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: `{"correct":${headlines.length - incorrect.length}}`
+		});
 	} else {
 		document.getElementById("curQuestion")!.innerText = (currIndex + 1).toString();
 		document.getElementById("gameHeadline")!.innerText = headlines[currIndex].headline;
@@ -52,15 +63,15 @@ function answer(answer: boolean) {
 	if(headlines[currIndex].isTrue !== answer) {
 		incorrect.push(headlines[currIndex]);
 	}
+	addQuestionDropdown(headlines[currIndex].headline, headlines[currIndex].isTrue, headlines[currIndex].isTrue === answer, headlines[currIndex].explanation);
 	currIndex++;
 	getNext();
 }
 
 function getMistakes() {
-	let mistakeHTML = incorrect.map(x => {
-		return `<b>${x.headline}</b> was ${x.isTrue ? "True" : "False"}\nYou answered: ${!x.isTrue ? "True" : "False"}\nReason:\n${x.explanation}`;
-	});
-	return mistakeHTML;
+	// incorrect.map(x => {
+	// 	addQuestionDropdown(x.headline, x.isTrue, !x.isTrue, x.explanation);
+	// });
 }
 
 function addQuestionDropdown(q: string, isTrue: boolean, wasCorrect: boolean, explanation: string) {

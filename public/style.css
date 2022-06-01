@@ -73,9 +73,11 @@ body {
 	text-align: center;
 }
 
-.frontpage {
+/* .frontpage {
 	display: none;
 }
+
+*/
 
 .game {
 	display: none;
@@ -136,7 +138,7 @@ body {
 }
 
 .end {
-	display: flex;
+	display: none;
 	flex-flow: column;
 	justify-content: center;
 	align-items: center;
