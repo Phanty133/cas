@@ -1,0 +1,62 @@
+[
+	{
+		"headline": "Land Ecosystems Are Becoming Less Efficient at Absorbing Carbon Dioxide",
+		"isTrue": true,
+		"explanation": "This article comes from a reputable source, NASA (https://climate.nasa.gov/news/3057/land-ecosystems-are-becoming-less-efficient-at-absorbing-carbon-dioxide) and cites the study that makes the claim."
+	},
+	{
+		"headline": "Icy ‘Glue' May Control Pace of Antarctic Ice-Shelf Breakup",
+		"isTrue": true,
+		"explanation": "This article comes from a reputable source, NASA (https://climate.nasa.gov/news/3118/icy-glue-may-control-pace-of-antarctic-ice-shelf-breakup/), and cites sources that support the claim."
+	},
+	{
+		"headline": "Reducing Emissions to Lessen Climate Change Would Yield Dramatic Health Benefits by 2030",
+		"isTrue": true,
+		"explanation": "This article comes from a reputable source, NASA (https://climate.nasa.gov/news/3134/reducing-emissions-to-lessen-climate-change-would-yield-dramatic-health-benefits-by-2030/), and cites sources that support the claim."
+	},
+	{
+		"headline": "By 2050, London's climate will be as warm as Barcelona's, says new study",
+		"isTrue": true,
+		"explanation": "This article comes from a reputable news source, CNN (https://edition.cnn.com/2019/07/11/europe/climate-cities-report-intl-hnk/index.html), and cites the study that support the claim. It also interviews an expert on the topic, further supporting the validity of the article."
+	},
+	{
+		"headline": "New government maps show nearly all of the West [USA] is in drought and it's not even summer yet: \"This is unprecedented\"",
+		"isTrue": true,
+		"explanation": "This article comes from a reputable news source, CBS (https://www.cbsnews.com/news/west-climate-change-water/), and cites data that validates the claim. The article also quotes an expert in the field."
+	},
+	{
+		"headline": "New map of UK in 2050 predicts British seasides vanishing as parts submerged under water",
+		"isTrue": true,
+		"explanation": "The article (https://www.mirror.co.uk/news/uk-news/parts-uk-could-completely-submerged-24370412) cites the source of the data and provides an expert's insight into the issue."
+	},
+	{
+		"headline": "How Qatar 2022 will be the first carbon-neutral FIFA World Cup™ in history",
+		"isTrue": false,
+		"explanation": "Despite the claim by FIFA (https://www.qatar2022.qa/en/news/how-qatar-will-be-the-first-carbon-neutral-fifa-world-cup-in-history), BBC, a reputable news source, cites a report that debunks this claim (https://www.bbc.com/sport/football/61636473) and that Qatar 2022 will not be carbon-neutral."
+	},
+	{
+		"headline": "Ted Cruz: The Texas Floods Were Caused by Native American Rain Dances",
+		"isTrue": false,
+		"explanation": "Snopes, a fact checking organisation, has debunked this claim (https://www.snopes.com/fact-check/rain-schtick/) and traced its origin to a satire website."
+	},
+	{
+		"headline": "The United States is banning the production and sale of real meat",
+		"isTrue": false,
+		"explanation": "The article originates as an april fools story on the news site VerveTimes (https://archive.ph/eXzB2), since then Snopes, a fact checking organisation, has debunked the article and shown how its claims, even the non-satirical ones in the final disclaimer, are incorrect (https://www.snopes.com/fact-check/usa-not-banning-red-meat/)."
+	},
+	{
+		"headline": "Windmills and solar panels use more energy than they produce",
+		"isTrue": false,
+		"explanation": "Snopes, a fact checking organisation, has debunked this claim in an article where they debunk many incorrect claims about climate change and renewable energy source (https://www.snopes.com/fact-check/electric-vehicle-batteries/)."
+	},
+	{
+		"headline": "Only 100 corporations are responsible for most of world’s greenhouse gas emissions",
+		"isTrue": false,
+		"explanation": "Snopes, a fact checking organisation, has debunked this claim (https://www.snopes.com/fact-check/corporations-greenhouse-gas/) and shown how the study claiming this only took fossil emissions into account, which comprise only a fraction of greenhouse emissions."
+	},
+	{
+		"headline": "California to Jail Climate Change Skeptics",
+		"isTrue": false,
+		"explanation": "Snopes, a fact checking organisation, has debunked this claim (https://www.snopes.com/fact-check/california-to-jail-climate-change-skeptics/) and shown how the article from which this claim originates from greatly misinterpreted repercussions of the bill that was proposed. While the bill did not pass, it also did not seek to instate jail time for misinformation, instead, it sought to make spreading misinformation an offence by businesses and organisations."
+	}
+]
