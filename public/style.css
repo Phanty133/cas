@@ -149,7 +149,7 @@ body {
 	font-size: 3vw;
 	color: white;
 	margin-top: 20vh;
-	margin-bottom: 10vh;
+	margin-bottom: 2vh;
 }
 
 #questionDropdownContainer {
@@ -184,6 +184,11 @@ body {
 	font-size: 1.75rem;
 }
 
+.dropdownHeadline {
+	max-width: 85%;
+	display: inline-block;
+}
+
 .dropdownHeadlineAnswer {
 	float: right;
 	font-weight: bold;
@@ -199,4 +204,17 @@ body {
 	height: auto;
 	margin-top: 1em;
 	margin-bottom: 0.25em;
+}
+
+.sharebtns {
+	color: white;
+	font-family: "Open Sans";
+	margin-bottom: 5vh;
+}
+
+.sharebtns > span {
+	margin-bottom: 0.5em;
+	font-size: 2rem;
+	display: inline-block;
+	text-align: center;
 }
