@@ -1,9 +1,10 @@
 body {
 	margin: 0;
+	overflow-x: hidden;
 }
 
 #bgimg {
-	position: absolute;
+	position: fixed;
 	z-index: -1;
 	width: 100vw;
 	height: 100vh;
@@ -72,32 +73,15 @@ body {
 	text-align: center;
 }
 
-/* .frontpage {
+.frontpage {
 	display: none;
 }
 
-*/
 .game {
 	display: none;
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
-}
-
-.gameheader {
-	background-color: white;
-	display: grid;
-	align-items: center;
-	padding: 0.5rem 2rem;
-	font-family: "Open Sans";
-	font-size: 2rem;
-	text-align: right;
-}
-
-.questionCounter {
-	display: inline-block;
-	width: 100%;
-	justify-self: flex-end;
 }
 
 .gamecontent {
@@ -108,10 +92,18 @@ body {
 	flex-flow: column;
 }
 
+.questionCounter {
+	color: white;
+	font-family: "Open Sans Light";
+	font-size: 2vw;
+}
+
 #gameHeadline {
 	color: white;
 	font-family: "Open Sans Light";
 	font-size: 3vw;
+	max-width: 75vw;
+	text-align: center;
 }
 
 .gameBtnContainer {
@@ -141,4 +133,68 @@ body {
 
 #btnTrue {
 	background-color: #27ae60;
+}
+
+.end {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.correctQuestions {
+	font-family: "Open Sans Light";
+	font-size: 3vw;
+	color: white;
+	margin-top: 20vh;
+	margin-bottom: 10vh;
+}
+
+#questionDropdownContainer {
+	display: grid;
+	width: 35vw;
+	row-gap: 1vh;
+	margin-bottom: 5vh;
+}
+
+.questionDropdown {
+	background-color: white;
+	font-family: "Open Sans";
+	padding: 1rem;
+	cursor: pointer;
+	transition: filter 0.3s;
+	color: white;
+}
+
+.questionDropdown:hover {
+	filter: brightness(85%);
+}
+
+.questionDropdown[data-correct] {
+	background-color: #27ae60;
+}
+
+.questionDropdown[data-wrong] {
+	background-color: #c0392b;
+}
+
+.dropdownHeadline, .dropdownHeadlineAnswer {
+	font-size: 1.75rem;
+}
+
+.dropdownHeadlineAnswer {
+	float: right;
+	font-weight: bold;
+}
+
+.dropdownContent {
+	font-size: 1.25rem;
+	overflow: hidden;
+	height: 0;
+}
+
+.questionDropdown[data-active] .dropdownContent {
+	height: auto;
+	margin-top: 1em;
+	margin-bottom: 0.25em;
 }

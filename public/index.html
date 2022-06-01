@@ -23,17 +23,34 @@
 			<span class="title">ready to rumble tumble game?</span>
 		</div>
 	</div>
-	<div id="game" class="game" hidden>
-		<div class="gameheader">
-			<span class="questionCounter"><span id="curQuestion">0</span>/<span id="totalQuestions">0</span></span>
-		</div>
+	<div id="game" class="game">
 		<div class="gamecontent">
+			<span class="questionCounter"><span id="curQuestion">0</span>/<span id="totalQuestions">0</span></span>
 			<span id="gameHeadline">this statement is false</span>
 			
 			<div class="gameBtnContainer">
 				<button id="btnFalse" onclick="answer(false)">Fake</button>
 				<button id="btnTrue" onclick="answer(true)">Real</button>
 			</div>
+		</div>
+	</div>
+
+	<div id="end" class="end">
+		<span class="correctQuestions"><span id="correctQuestionNr">0</span>/<span>0</span> correct</span>
+
+		<div id="questionDropdownContainer">
+			<!-- <div class="questionDropdown" data-correct>
+				<span class="dropdownHeadline">headline1</span>
+				<span class="dropdownHeadlineAnswer">Fake</span>
+
+				<div class="dropdownContent">
+					<span>
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+					</span><br><br>
+
+					<span class="questionDropdownCorrectPercentage"><b>69%</b> answered correctly</span>
+				</div>
+			</div> -->
 		</div>
 	</div>
 
