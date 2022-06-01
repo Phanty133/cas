@@ -71,3 +71,73 @@ body {
 	align-items: center;
 	text-align: center;
 }
+
+.frontpage {
+	display: none;
+}
+
+.game {
+	display: block;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.gameheader {
+	background-color: white;
+	display: grid;
+	align-items: center;
+	padding: 0.5rem 2rem;
+	font-family: "Open Sans";
+	font-size: 2rem;
+	text-align: right;
+}
+
+.questionCounter {
+	display: inline-block;
+	width: 100%;
+	justify-self: flex-end;
+}
+
+.gamecontent {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 25vh;
+	flex-flow: column;
+}
+
+#gameHeadline {
+	color: white;
+	font-family: "Open Sans Light";
+	font-size: 3vw;
+}
+
+.gameBtnContainer {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin-top: 25vh;
+	column-gap: 2vw;
+}
+
+.gameBtnContainer button {
+	font-size: 3rem;
+	padding: 0.5rem 1rem;
+	width: 20vw;
+	color: white;
+	border: none;
+	cursor: pointer;
+	transition: filter 0.3s;
+}
+
+.gameBtnContainer button:hover{
+	filter: brightness(85%);
+}
+
+#btnFalse {
+	background-color: #c0392b;
+}
+
+#btnTrue {
+	background-color: #27ae60;
+}
