@@ -5,8 +5,10 @@ class Headline {
 }
 
 let currIndex = 0;
+let headlinesOg: Headline[] = [];
 let headlines: Headline[] = [];
 let incorrect: Headline[] = [];
+let correct: boolean[] = [];
 
 // Fisher-Yates based mode doe
 function shuffle(arr: any[]) {
@@ -21,9 +23,9 @@ function shuffle(arr: any[]) {
 
 function init() {
 	fetch("headlines.json").then(resp => resp.json()).then(resp => {
-		headlines = resp; // load headlines
-		document.getElementById("totalQuestions")!.innerText = headlines.length.toString();
-		document.getElementById("totalQuestions2")!.innerText = headlines.length.toString();
+		headlinesOg = resp; // load headlines
+		document.getElementById("totalQuestions")!.innerText = headlinesOg.length.toString();
+		document.getElementById("totalQuestions2")!.innerText = headlinesOg.length.toString();
 	});
 
 	// addQuestionDropdown("q1", false, true, "hello1");
@@ -34,24 +36,27 @@ function init() {
 function start() {
 	currIndex = 0;
 	incorrect = [];
-	headlines = shuffle(headlines); // shuffle headlines
+	correct = [];
+	headlines = shuffle(headlinesOg); // shuffle headlines
 	document.getElementById("frontpage")!.style.display = "none";
 	document.getElementById("game")!.style.display = "block";
 	getNext();
 }
 
 function getNext() {
-	if (currIndex >= headlines.length) {
+	console.log(currIndex);
+	console.log(headlinesOg.length);
+	if (currIndex >= headlinesOg.length) {
 		// getMistakes();
 		document.getElementById("correctQuestionNr")!.innerText = (headlines.length - incorrect.length).toString();
 		document.getElementById("game")!.style.display = "none";
 		document.getElementById("end")!.style.display = "flex";
-		fetch("http://35.172.201.164:6969/endpoint", {
+		fetch("https://cas-data-collector.herokuapp.com/endpoint", {
 			method: "POST",
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			body: `{"correct":${headlines.length - incorrect.length}}`
+			body: `{"correct":[${correct}]}`
 		});
 	} else {
 		document.getElementById("curQuestion")!.innerText = (currIndex + 1).toString();
@@ -64,6 +69,7 @@ function answer(answer: boolean) {
 		incorrect.push(headlines[currIndex]);
 	}
 	addQuestionDropdown(headlines[currIndex].headline, headlines[currIndex].isTrue, headlines[currIndex].isTrue === answer, headlines[currIndex].explanation);
+	correct.push(headlines[currIndex].isTrue === answer);
 	currIndex++;
 	getNext();
 }
@@ -77,13 +83,14 @@ function getMistakes() {
 function addQuestionDropdown(q: string, isTrue: boolean, wasCorrect: boolean, explanation: string) {
 	const container = document.getElementById("questionDropdownContainer") as HTMLDivElement;
 
-	const correctPercentage = 69;
+	fetch("https://cas-data-collector.herokuapp.com/getStat?question=" + headlinesOg.map(x => x.headline).indexOf(q)).then(resp => resp.text()).then(resp => {
+		const correctPercentage = Math.floor(parseFloat(resp) * 100);
 
-	const dropdownEl = document.createElement("div");
-	dropdownEl.className = "questionDropdown";
-	dropdownEl.setAttribute(wasCorrect ? "data-correct" : "data-wrong","");
+		const dropdownEl = document.createElement("div");
+		dropdownEl.className = "questionDropdown";
+		dropdownEl.setAttribute(wasCorrect ? "data-correct" : "data-wrong", "");
 
-	dropdownEl.innerHTML = `
+		dropdownEl.innerHTML = `
 	<span class="dropdownHeadline">${q}</span>
 	<span class="dropdownHeadlineAnswer">${isTrue ? "Real" : "Fake"}</span>
 
@@ -93,9 +100,10 @@ function addQuestionDropdown(q: string, isTrue: boolean, wasCorrect: boolean, ex
 		<span class="questionDropdownCorrectPercentage"><b>${correctPercentage}%</b> answered correctly</span>
 	</div>`;
 
-	dropdownEl.addEventListener("click", () => { dropdownEl.toggleAttribute("data-active"); });
+		dropdownEl.addEventListener("click", () => { dropdownEl.toggleAttribute("data-active"); });
 
-	container.appendChild(dropdownEl);
+		container.appendChild(dropdownEl);
+	});
 }
 
 if (document.readyState === "complete" || document.readyState === "interactive") {
