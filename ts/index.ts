@@ -51,7 +51,7 @@ function getMistakes() {
 }
 
 if (document.readyState === "complete" || document.readyState === "interactive") {
-    init();
+	init();
 } else {
-    window.addEventListener("DOMContentLoaded", init);
+	window.addEventListener("DOMContentLoaded", init);
 }
