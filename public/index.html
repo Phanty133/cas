@@ -11,19 +11,19 @@
 </head>
 <body>
 	<div id="bgimg"></div>
-	<div class="frontpage">
+	<div id="frontpage" class="frontpage">
 		<div class="frontleft">
 			<div>
 				<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
 				<br>
-				<span id="playBtn">Play</span>
+				<span id="playBtn" onclick="start()">Play</span>
 			</div>
 		</div>
 		<div class="frontright">
 			<span class="title">ready to rumble tumble game?</span>
 		</div>
 	</div>
-	<div class="game">
+	<div id="game" class="game" hidden>
 		<div class="gameheader">
 			<span class="questionCounter"><span id="curQuestion">0</span>/<span id="totalQuestions">0</span></span>
 		</div>
@@ -31,8 +31,8 @@
 			<span id="gameHeadline">this statement is false</span>
 			
 			<div class="gameBtnContainer">
-				<button id="btnFalse">Fake</button>
-				<button id="btnTrue">Real</button>
+				<button id="btnFalse" onclick="answer(false)">Fake</button>
+				<button id="btnTrue" onclick="answer(true)">Real</button>
 			</div>
 		</div>
 	</div>
